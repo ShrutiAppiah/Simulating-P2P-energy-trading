@@ -17,10 +17,11 @@ def energy_economy_portrayal(tree):
     portrayal["Color"] = colors[tree.condition]
     return portrayal
 
-canvas_element = CanvasGrid(energy_economy_portrayal, 100, 100, 650, 650)
+canvas_element = CanvasGrid(energy_economy_portrayal, 100, 100, 600, 600)
 tree_chart = ChartModule([{"Label": "Unelectrified", "Color": "brown"},
                           {"Label": "Transition", "Color": "orange"},
-                          {"Label": "Electrified", "Color": "green"}])
+                          {"Label": "Electrified", "Color": "green"}],
+                          canvas_height=300, canvas_width=650)
 
 server = ModularServer(ForestFire, [canvas_element, tree_chart], "Prava: Peer-to-Peer Energy Marketplace",
-                       100, 100, 0.65)
+                       100, 100, 0.50)
