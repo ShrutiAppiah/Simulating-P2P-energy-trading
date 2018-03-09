@@ -1,3 +1,3 @@
-from forest_fire.server import server
+from energy_economy.server import server
 
 server.launch()
