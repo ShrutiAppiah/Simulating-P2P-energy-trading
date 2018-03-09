@@ -17,7 +17,7 @@ def energy_economy_portrayal(tree):
     portrayal["Color"] = colors[tree.condition]
     return portrayal
 
-canvas_element = CanvasGrid(energy_economy_portrayal, 100, 100, 500, 500)
+canvas_element = CanvasGrid(energy_economy_portrayal, 100, 100, 650, 650)
 tree_chart = ChartModule([{"Label": "Unelectrified", "Color": "brown"},
                           {"Label": "Transition", "Color": "orange"},
                           {"Label": "Electrified", "Color": "green"}])
