@@ -27,7 +27,7 @@ class ForestFire(Model):
 
         # Set up model objects
         self.schedule = RandomActivation(self)
-        self.grid = Grid(height, width, torus=False)
+        self.grid = Grid(height, width, torus=True)
 
         self.datacollector = DataCollector(
             {"Unelectrified": lambda m: self.count_type(m, "Unelectrified"),
@@ -38,6 +38,8 @@ class ForestFire(Model):
         for (contents, x, y) in self.grid.coord_iter():
             if random.random() < self.density:
                 # Create a tree
+                x = random.randrange(self.width)
+                y = random.randrange(self.height)
                 new_tree = TreeCell((x, y), self)
                 # Set all trees in the first column on fire.
                 if x == 0:
