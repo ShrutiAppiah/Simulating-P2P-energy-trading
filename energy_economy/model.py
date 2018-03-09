@@ -42,8 +42,12 @@ class ForestFire(Model):
                 y = random.randrange(self.height)
                 new_tree = TreeCell((x, y), self)
                 # Set all trees in the first column on fire.
-                if x == 4:
-                    new_tree.condition = "Transition"
+             #  if x == 4:
+            #        new_tree.condition = "Transition"
+            #    self.grid._place_agent((x, y), new_tree)
+            #    self.schedule.add(new_tree)
+                if (x<40 & y<40):
+                        new_tree.condition = "Transition"
                 self.grid._place_agent((x, y), new_tree)
                 self.schedule.add(new_tree)
         self.running = True
